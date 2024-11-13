@@ -1,0 +1,10 @@
+main1 :  Document.o Livre.o Article.o main1.o
+	g++ Document.o Livre.o Article.o main1.o -o main1
+Document.o : Document.h Document.cpp
+	g++ -c Document.cpp
+Livre.o : Livre.h Livre.cpp Document.h
+	g++ -c Livre.cpp
+Article.o : Article.h Article.cpp Document.h
+	g++ -c Article.cpp
+main1.o : main1.cpp Document.h Livre.h Article.h
+	g++ -c main1.cpp

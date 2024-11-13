@@ -1,0 +1,12 @@
+main2 :  Document.o Livre.o Article.o Bibliotheque.o main2.o
+	g++ Document.o Livre.o Article.o Bibliotheque.o main2.o -o main2
+Document.o : Document.h Document.cpp
+	g++ -c Document.cpp
+Livre.o : Livre.h Livre.cpp Document.h
+	g++ -c Livre.cpp
+Article.o : Article.h Article.cpp Document.h
+	g++ -c Article.cpp
+Bibliotheque.o : Bibliotheque.h Bibliotheque.cpp Document.h Article.h Livre.h
+	g++ -c Bibliotheque.cpp
+main2.o : main2.cpp Document.h Livre.h Article.h
+	g++ -c main2.cpp
